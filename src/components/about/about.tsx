@@ -91,7 +91,7 @@ export function About() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-forest-400 rounded-full mr-3"></span>
-                  Gluten-free and dietary options
+                  Dietary accommodations by request
                 </li>
               </ul>
             </div>

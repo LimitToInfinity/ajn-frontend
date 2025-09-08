@@ -83,7 +83,7 @@ export function Home() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
-              src="/images/crafts/crochet/signal-2025-03-09-140502.jpeg"
+              src="/images/crafts/crochet/signal-2025-08-28-08-32-00-653.jpg"
               alt="Craft creations"
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
             />
