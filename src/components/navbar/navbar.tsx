@@ -41,7 +41,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-forest-700 to-purple-700 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-forest-600 to-purple-800 rounded-full flex items-center justify-center">
               <span className="text-amber-50 font-bold text-xs">AJN</span>
             </div>
             <span className="font-serif text-xl font-semibold text-forest-700">Allyson Nadeau</span>
