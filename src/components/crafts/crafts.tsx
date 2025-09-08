@@ -1,6 +1,8 @@
 export function Crafts() {
   const crochetImages = [
     '/images/crafts/crochet/signal-2025-03-09-140502.jpeg',
+    '/images/crafts/crochet/IMG_2636.jpg',
+    '/images/crafts/crochet/IMG_2639.jpg',
     '/images/crafts/crochet/IMG_1573.jpg',
     '/images/crafts/crochet/IMG_1574.jpg',
     '/images/crafts/crochet/signal-2025-06-17-150529.jpeg',
@@ -21,6 +23,8 @@ export function Crafts() {
     '/images/crafts/crochet/signal-2025-03-31-195212-1.jpeg',
     '/images/crafts/crochet/signal-2025-03-31-195212.jpeg',
     '/images/crafts/crochet/signal-2025-05-20-121015.jpeg',
+    '/images/crafts/crochet/IMG_2637.jpg',
+    '/images/crafts/crochet/IMG_2638.jpg',
   ]
 
   const charmImages = [

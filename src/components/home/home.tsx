@@ -60,7 +60,7 @@ export function Home() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
-              src="/images/baking/cakes/IMG_1811.jpg"
+              src="/images/baking/cakes/IMG_2220.jpg"
               alt="Baking creations"
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
             />
