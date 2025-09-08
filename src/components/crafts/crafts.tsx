@@ -25,6 +25,16 @@ export function Crafts() {
     '/images/crafts/crochet/signal-2025-05-20-121015.jpeg',
     '/images/crafts/crochet/IMG_2637.jpg',
     '/images/crafts/crochet/IMG_2638.jpg',
+    '/images/crafts/crochet/IMG_2653.jpg',
+    '/images/crafts/crochet/IMG_2654.jpg',
+    '/images/crafts/crochet/IMG_2655.jpg',
+    '/images/crafts/crochet/IMG_2656.jpg',
+    '/images/crafts/crochet/IMG_2657.jpg',
+    '/images/crafts/crochet/IMG_2659.jpg',
+    '/images/crafts/crochet/IMG_2663.jpg',
+    '/images/crafts/crochet/IMG_2660.jpg',
+    '/images/crafts/crochet/IMG_2661.jpg',
+    '/images/crafts/crochet/IMG_2662.jpg',
   ]
 
   const charmImages = [

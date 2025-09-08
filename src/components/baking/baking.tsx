@@ -128,6 +128,7 @@ export function Baking() {
     '/images/baking/signal-2025-02-26-113056-2.jpeg',
     '/images/baking/signal-2025-02-26-113056.jpeg',
     '/images/baking/signal-2025-06-02-121834.jpeg',
+    '/images/baking/IMG_2658.jpg',
   ]
 
   return (
