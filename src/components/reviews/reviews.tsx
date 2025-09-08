@@ -93,7 +93,7 @@ export function Reviews() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-earth-50 via-sky-50 to-purple-50">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-sky-600 to-forest-500 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-r from-sky-800 to-forest-700 text-white">
         <div className="absolute inset-0 bg-nature-pattern opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
@@ -112,7 +112,7 @@ export function Reviews() {
         <div className="text-center mb-12">
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-gradient-to-r from-purple-500 to-sky-500 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-sky-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-purple-700 to-sky-700 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-sky-600 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             {showForm ? 'Cancel' : 'Write a Review'}
           </button>
@@ -209,7 +209,7 @@ export function Reviews() {
             <div key={review.id} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div className="flex items-center space-x-4 mb-2 md:mb-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-forest-400 to-purple-400 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-forest-600 to-purple-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">
                       {review.name.charAt(0)}
                     </span>

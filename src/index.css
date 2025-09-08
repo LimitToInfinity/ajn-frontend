@@ -6,6 +6,58 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-forest-50: #f0f9f4;
+  --color-forest-100: #dcf2e4;
+  --color-forest-200: #bce5cd;
+  --color-forest-300: #8dd1a8;
+  --color-forest-400: #56b57c;
+  --color-forest-500: #2d7a4f;
+  --color-forest-600: #22623e;
+  --color-forest-700: #1d4f33;
+  --color-forest-800: #18402a;
+  --color-forest-900: #153523;
+
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-300: #d8b4fe;
+  --color-purple-400: #c084fc;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7c3aed;
+  --color-purple-800: #6b21a8;
+  --color-purple-900: #581c87;
+
+  --color-earth-50: #fdfcf8;
+  --color-earth-100: #faf7ed;
+  --color-earth-200: #f4edd4;
+  --color-earth-300: #ebdfb0;
+  --color-earth-400: #dfcc7f;
+  --color-earth-500: #d4b85c;
+  --color-earth-600: #c4a047;
+  --color-earth-700: #a0853a;
+  --color-earth-800: #826a32;
+  --color-earth-900: #6b562b;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-serif: 'Playfair Display', serif;
+  --font-family-handwriting: 'Kalam', cursive;
+
+  --background-image-nature-pattern: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23f0f9f4" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: linear-gradient(135deg, #f0f9f4 0%, #e0f2fe 50%, #faf5ff 100%);

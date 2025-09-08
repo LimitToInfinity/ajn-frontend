@@ -146,7 +146,7 @@ export function Baking() {
       </div>
 
       {/* Contact Section */}
-        <div className="bg-gradient-to-r from-forest-500 to-purple-500 text-white">
+        <div className="bg-gradient-to-r from-forest-800 to-purple-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">

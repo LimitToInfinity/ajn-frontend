@@ -1,44 +1,62 @@
 export function Crafts() {
   const crochetImages = [
-    '/src/assets/images/crafts/crochet/IMG_20250907_101402_739.jpg',
-    '/src/assets/images/crafts/crochet/IMG_20250907_101518_412.jpg',
-    '/src/assets/images/crafts/crochet/IMG_2337.jpg',
-    '/src/assets/images/crafts/crochet/IMG_2339.jpg',
-    '/src/assets/images/crafts/crochet/signal-2025-03-19-064446-1.jpeg',
-    '/src/assets/images/crafts/crochet/signal-2025-03-19-064446.jpeg',
-    '/src/assets/images/crafts/crochet/signal-2025-05-31-203241.jpeg',
-    '/src/assets/images/crafts/crochet/signal-2025-08-05-140242.jpeg',
-    '/src/assets/images/crafts/crochet/signal-2025-08-16-16-29-48-535.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-03-09-140502.jpeg',
+    '/src/assets/images/crafts/crochet/IMG_1573.jpg',
+    '/src/assets/images/crafts/crochet/IMG_1574.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-06-17-150529.jpeg',
+    '/src/assets/images/crafts/crochet/IMG_2304.jpg',
+    '/src/assets/images/crafts/crochet/IMG_2307.jpg',
+    '/src/assets/images/crafts/crochet/IMG_2309.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-07-30-184236.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-08-28-08-32-00-653.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-08-28-08-31-11-224.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-02-24-130818.jpeg',
+    '/src/assets/images/crafts/crochet/IMG_20250907_101132_153.jpg',
+    '/src/assets/images/crafts/crochet/signal-2025-01-19-140033.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-02-15-141759.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-02-22-113504.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-02-22-114913.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-02-22-122228.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-03-20-182303.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-03-31-195212-1.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-03-31-195212.jpeg',
+    '/src/assets/images/crafts/crochet/signal-2025-05-20-121015.jpeg',
   ]
 
   const charmImages = [
-    '/src/assets/images/crafts/charms/IMG_20250907_101402_739.jpg',
-    '/src/assets/images/crafts/charms/IMG_20250907_101518_412.jpg',
-    '/src/assets/images/crafts/charms/IMG_2337.jpg',
-    '/src/assets/images/crafts/charms/IMG_2339.jpg',
-    '/src/assets/images/crafts/charms/signal-2025-03-19-064446-1.jpeg',
-    '/src/assets/images/crafts/charms/signal-2025-03-19-064446.jpeg',
-    '/src/assets/images/crafts/charms/signal-2025-05-31-203241.jpeg',
-    '/src/assets/images/crafts/charms/signal-2025-08-05-140242.jpeg',
-    '/src/assets/images/crafts/charms/signal-2025-08-16-16-29-48-535.jpg',
+    '/src/assets/images/crafts/charms/IMG_2072.jpg',
+    '/src/assets/images/crafts/charms/IMG_2073.jpg',
+    '/src/assets/images/crafts/charms/IMG_2083.jpg',
+    '/src/assets/images/crafts/charms/IMG_2084.jpg',
+    '/src/assets/images/crafts/charms/IMG_2102.jpg',
+    '/src/assets/images/crafts/charms/IMG_2103.jpg',
+    '/src/assets/images/crafts/charms/signal-2025-02-08-131224.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-03-12-123711.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-03-12-124501.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-06-24-134410.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-07-02-165130.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-07-02-165457.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-07-02-200346.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-07-07-105133.jpeg',
+    '/src/assets/images/crafts/charms/signal-2025-07-09-16-29-58-373.jpg',
   ]
 
   const otherCraftImages = [
     '/src/assets/images/crafts/IMG_20250907_101402_739.jpg',
     '/src/assets/images/crafts/IMG_20250907_101518_412.jpg',
+    '/src/assets/images/crafts/signal-2025-08-05-140242.jpeg',
     '/src/assets/images/crafts/IMG_2337.jpg',
     '/src/assets/images/crafts/IMG_2339.jpg',
+    '/src/assets/images/crafts/signal-2025-08-16-16-29-48-535.jpg',
     '/src/assets/images/crafts/signal-2025-03-19-064446-1.jpeg',
     '/src/assets/images/crafts/signal-2025-03-19-064446.jpeg',
     '/src/assets/images/crafts/signal-2025-05-31-203241.jpeg',
-    '/src/assets/images/crafts/signal-2025-08-05-140242.jpeg',
-    '/src/assets/images/crafts/signal-2025-08-16-16-29-48-535.jpg',
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-earth-50 via-sky-50 to-purple-50">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-sky-500 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-r from-purple-800 to-sky-700 text-white">
         <div className="absolute inset-0 bg-nature-pattern opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">

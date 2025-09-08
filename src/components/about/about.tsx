@@ -4,7 +4,7 @@ export function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-earth-50 via-sky-50 to-purple-50">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-forest-500 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-r from-forest-800 to-sky-900 text-white">
         <div className="absolute inset-0 bg-nature-pattern opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
@@ -132,7 +132,7 @@ export function About() {
         </div>
 
         {/* Philosophy */}
-        <div className="bg-gradient-to-r from-forest-500 to-purple-500 rounded-2xl p-12 text-white mb-20">
+        <div className="bg-gradient-to-r from-forest-800 to-purple-800 rounded-2xl p-12 text-white mb-20">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
               My Philosophy
@@ -160,7 +160,7 @@ export function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:allyson@example.com"
-              className="bg-gradient-to-r from-forest-500 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:from-forest-600 hover:to-purple-600 transition-all duration-200"
+              className="bg-gradient-to-r from-forest-700 to-purple-700 text-white px-8 py-3 rounded-full font-semibold hover:from-forest-600 hover:to-purple-600 transition-all duration-200"
             >
               Get in Touch
             </a>

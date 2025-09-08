@@ -4,7 +4,7 @@ export function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-forest-600 via-purple-600 to-sky-500 text-white">
+      <div className="relative overflow-hidden bg-gradient-to-br from-forest-600 via-forest-900 to-purple-900 text-white">
         <div className="absolute inset-0 bg-nature-pattern opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -58,7 +58,7 @@ export function Home() {
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {/* Baking Preview */}
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-forest-500 to-purple-500 opacity-90 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
               src="/src/assets/images/baking/cakes/IMG_1811.jpg"
               alt="Baking creations"
@@ -81,9 +81,9 @@ export function Home() {
 
           {/* Crafts Preview */}
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-sky-500 opacity-90 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
-              src="/src/assets/images/crafts/crochet/IMG_2337.jpg"
+              src="/src/assets/images/crafts/crochet/signal-2025-03-09-140502.jpeg"
               alt="Craft creations"
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
             />
@@ -129,7 +129,7 @@ export function Home() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-forest-500 to-purple-500 rounded-2xl p-12 text-center text-white">
+        <div className="bg-gradient-to-br from-purple-800 via-forest-700 to-sky-700 rounded-2xl p-12 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
             Ready to Create Something Special?
           </h2>
