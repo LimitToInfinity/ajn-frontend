@@ -159,7 +159,7 @@ export function About() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:allyson@example.com"
+              href="mailto:fiberandfrosting@gmail.com"
               className="bg-gradient-to-r from-forest-700 to-purple-700 text-white px-8 py-3 rounded-full font-semibold hover:from-forest-600 hover:to-purple-600 transition-all duration-200"
             >
               Get in Touch

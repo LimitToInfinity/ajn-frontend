@@ -157,7 +157,7 @@ export function Baking() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:allyson@example.com"
+                href="mailto:fiberandfrosting@gmail.com"
                 className="bg-white text-forest-600 px-8 py-3 rounded-full font-semibold hover:bg-sky-50 transition-colors duration-200"
               >
                 Get in Touch
