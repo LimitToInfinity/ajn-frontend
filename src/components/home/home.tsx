@@ -34,7 +34,7 @@ export function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-sky-400 to-purple-400 rounded-full blur-3xl opacity-30"></div>
                 <img
-                  src="/src/assets/images/headshots/ajn_headshot_1.jpg"
+                  src="/images/headshots/ajn_headshot_1.jpg"
                   alt="Allyson Nadeau"
                   className="relative w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-white/20"
                 />
@@ -60,7 +60,7 @@ export function Home() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
-              src="/src/assets/images/baking/cakes/IMG_1811.jpg"
+              src="/images/baking/cakes/IMG_1811.jpg"
               alt="Baking creations"
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
             />
@@ -83,7 +83,7 @@ export function Home() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-br from-forest-800 to-purple-600 opacity-70 z-10"></div>
             <img
-              src="/src/assets/images/crafts/crochet/signal-2025-03-09-140502.jpeg"
+              src="/images/crafts/crochet/signal-2025-03-09-140502.jpeg"
               alt="Craft creations"
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
             />

@@ -49,7 +49,7 @@ export function About() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-sky-400 rounded-full blur-3xl opacity-30"></div>
               <img
-                src="/src/assets/images/headshots/ajn_headshot_1.jpg"
+                src="/images/headshots/ajn_headshot_1.jpg"
                 alt="Allyson Nadeau"
                 className="relative w-96 h-96 object-cover rounded-full shadow-2xl border-4 border-white/20"
               />
