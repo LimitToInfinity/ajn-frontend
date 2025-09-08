@@ -38,7 +38,7 @@ export function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalPr
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+        className="absolute top-4 right-4 z-10 text-gray-400/80 hover:text-gray-500/80 transition-colors duration-200 cursor-pointer"
         aria-label="Close image"
       >
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
