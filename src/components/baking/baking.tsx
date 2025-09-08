@@ -1,4 +1,19 @@
+import { useState } from 'react'
+import { ImageModal } from '../common/ImageModal'
+
 export function Baking() {
+  const [modalImage, setModalImage] = useState<string | null>(null)
+  const [modalAlt, setModalAlt] = useState<string>('')
+
+  const openModal = (imageSrc: string, alt: string) => {
+    setModalImage(imageSrc)
+    setModalAlt(alt)
+  }
+
+  const closeModal = () => {
+    setModalImage(null)
+    setModalAlt('')
+  }
   // Import all baking images
   const cakeImages = [
     '/images/baking/cakes/IMG_1857.jpg',
@@ -161,7 +176,11 @@ export function Baking() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cakeImages.map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div 
+              key={index} 
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+              onClick={() => openModal(image, 'Cake creation')}
+            >
               <img
                 src={image}
                 alt={`Cake creation ${index + 1}`}
@@ -192,7 +211,11 @@ export function Baking() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {otherBakingImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                onClick={() => openModal(image, 'Baking creation')}
+              >
                 <img
                   src={image}
                   alt={`Baking creation ${index + 1}`}
@@ -237,6 +260,14 @@ export function Baking() {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={modalImage !== null}
+        onClose={closeModal}
+        imageSrc={modalImage || ''}
+        imageAlt={modalAlt}
+      />
     </div>
   )
 }

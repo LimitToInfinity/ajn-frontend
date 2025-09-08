@@ -1,4 +1,19 @@
+import { useState } from 'react'
+import { ImageModal } from '../common/ImageModal'
+
 export function Crafts() {
+  const [modalImage, setModalImage] = useState<string | null>(null)
+  const [modalAlt, setModalAlt] = useState<string>('')
+
+  const openModal = (imageSrc: string, alt: string) => {
+    setModalImage(imageSrc)
+    setModalAlt(alt)
+  }
+
+  const closeModal = () => {
+    setModalImage(null)
+    setModalAlt('')
+  }
   const crochetImages = [
     '/images/crafts/crochet/signal-2025-03-09-140502.jpeg',
     '/images/crafts/crochet/IMG_2636.jpg',
@@ -97,7 +112,11 @@ export function Crafts() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {crochetImages.map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div 
+              key={index} 
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+              onClick={() => openModal(image, 'Crochet creation')}
+            >
               <img
                 src={image}
                 alt={`Crochet creation ${index + 1}`}
@@ -129,7 +148,11 @@ export function Crafts() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {charmImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                onClick={() => openModal(image, 'Charm creation')}
+              >
                 <img
                   src={image}
                   alt={`Charm creation ${index + 1}`}
@@ -161,7 +184,11 @@ export function Crafts() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {otherCraftImages.map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div 
+              key={index} 
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+              onClick={() => openModal(image, 'Craft creation')}
+            >
               <img
                 src={image}
                 alt={`Craft creation ${index + 1}`}
@@ -220,6 +247,14 @@ export function Crafts() {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={modalImage !== null}
+        onClose={closeModal}
+        imageSrc={modalImage || ''}
+        imageAlt={modalAlt}
+      />
     </div>
   )
 }
