@@ -131,6 +131,63 @@ export function About() {
           </div>
         </div>
 
+        {/* Professional Credentials */}
+        <div className="mb-20">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-forest-700 mb-12 text-center">
+            Professional Credentials
+          </h2>
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8">
+            <div className="text-center mb-8">
+              <p className="text-lg text-forest-600 leading-relaxed">
+                My commitment to excellence is backed by professional training and certifications 
+                that ensure the highest quality in everything I create.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-forest-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">🎓</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-forest-700">CIA Baking and Pastry Graduate</h3>
+                    <p className="text-forest-600">Culinary Institute of America</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">🛡️</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-forest-700">ServSafe Manager</h3>
+                    <p className="text-forest-600">Food Safety Certification</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-sky-500 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">📋</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-forest-700">Allergen Certified</h3>
+                    <p className="text-forest-600">Allergen Management Specialist</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-forest-500 to-sky-500 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-lg">🏆</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-forest-700">Certified Journey Baker</h3>
+                    <p className="text-forest-600">Retail Bakers of America</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Philosophy */}
         <div className="bg-gradient-to-r from-forest-800 to-purple-800 rounded-2xl p-12 text-white mb-20">
           <div className="text-center">
