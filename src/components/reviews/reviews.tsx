@@ -47,11 +47,12 @@ export function Reviews() {
 
   const [newReview, setNewReview] = useState({
     name: '',
-    rating: 5,
+    rating: 0,
     comment: '',
     type: 'general' as 'baking' | 'crafts' | 'general'
   })
 
+  const [hoverRating, setHoverRating] = useState(0)
   const [showForm, setShowForm] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -66,7 +67,7 @@ export function Reviews() {
         type: newReview.type
       }
       setReviews([review, ...reviews])
-      setNewReview({ name: '', rating: 5, comment: '', type: 'general' })
+      setNewReview({ name: '', rating: 0, comment: '', type: 'general' })
       setShowForm(false)
     }
   }
@@ -112,7 +113,7 @@ export function Reviews() {
         <div className="text-center mb-12">
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-gradient-to-r from-purple-700 to-sky-700 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-sky-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-purple-700 to-sky-700 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-sky-600 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer"
           >
             {showForm ? 'Cancel' : 'Write a Review'}
           </button>
@@ -159,16 +160,25 @@ export function Reviews() {
                   Rating
                 </label>
                 <div className="flex space-x-2">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setNewReview({ ...newReview, rating: i + 1 })}
-                      className={`text-2xl ${i < newReview.rating ? 'text-earth-500' : 'text-gray-300'} hover:text-earth-400`}
-                    >
-                      ★
-                    </button>
-                  ))}
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const starRating = i + 1
+                    const isFilled = starRating <= (hoverRating || newReview.rating)
+                    
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setNewReview({ ...newReview, rating: starRating })}
+                        onMouseEnter={() => setHoverRating(starRating)}
+                        onMouseLeave={() => setHoverRating(0)}
+                        className={`text-2xl cursor-pointer transition-colors duration-200 ${
+                          isFilled ? 'text-earth-500' : 'text-gray-300'
+                        }`}
+                      >
+                        ★
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
               <div>
@@ -188,13 +198,13 @@ export function Reviews() {
                 <button
                   type="button"
                   onClick={() => setShowForm(false)}
-                  className="px-6 py-3 border border-forest-300 text-forest-600 rounded-lg hover:bg-forest-50 transition-colors duration-200"
+                  className="px-6 py-3 border border-forest-300 text-forest-600 rounded-lg hover:bg-forest-50 transition-colors duration-200 cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-forest-500 to-purple-500 text-white rounded-lg hover:from-forest-600 hover:to-purple-600 transition-all duration-200"
+                  className="px-6 py-3 bg-gradient-to-r from-forest-500 to-purple-500 text-white rounded-lg hover:from-forest-600 hover:to-purple-600 transition-all duration-200 cursor-pointer"
                 >
                   Submit Review
                 </button>
