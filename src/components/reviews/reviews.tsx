@@ -72,7 +72,7 @@ export function Reviews() {
       })) as Review[]
       
       // Combine Firebase reviews with fake reviews (fake reviews first)
-      const combinedReviews = [...fakeReviews, ...firebaseReviews]
+      const combinedReviews = [...firebaseReviews, ...fakeReviews]
       setReviews(combinedReviews)
       setIsLoading(false)
     }, (error) => {
