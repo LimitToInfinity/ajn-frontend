@@ -4,7 +4,8 @@ import { db } from '../../firebase/config'
 
 interface Review {
   id: string
-  name: string
+  firstName: string
+  lastName: string
   rating: number
   comment: string
   date: string
@@ -16,7 +17,8 @@ export function Reviews() {
   const fakeReviews: Review[] = [
     {
       id: "fake-1",
-      name: "Sarah M.",
+      firstName: "Sarah",
+      lastName: "Marie",
       rating: 5,
       comment: "Allyson's crochet top is absolutely beautiful! The quality is amazing and it fits perfectly. I get compliments every time I wear it.",
       date: "2024-12-15",
@@ -24,7 +26,8 @@ export function Reviews() {
     },
     {
       id: "fake-2",
-      name: "Michael R.",
+      firstName: "Michael",
+      lastName: "Ryan",
       rating: 5,
       comment: "The custom birthday cake for my daughter was incredible! Not only did it look amazing, but it tasted even better. Highly recommend!",
       date: "2024-12-10",
@@ -32,7 +35,8 @@ export function Reviews() {
     },
     {
       id: "fake-3",
-      name: "Emma L.",
+      firstName: "Emma",
+      lastName: "Leigh",
       rating: 5,
       comment: "I ordered a set of crochet toys for my niece and they are so adorable! The attention to detail is remarkable. Will definitely order again.",
       date: "2024-12-08",
@@ -40,7 +44,8 @@ export function Reviews() {
     },
     {
       id: "fake-4",
-      name: "David K.",
+      firstName: "David",
+      lastName: "Krause",
       rating: 5,
       comment: "Allyson's baking skills are top-notch. The pastries were fresh, delicious, and beautifully presented. Perfect for our office party!",
       date: "2024-12-05",
@@ -52,7 +57,8 @@ export function Reviews() {
   const [isLoading, setIsLoading] = useState(true)
 
   const [newReview, setNewReview] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     rating: 0,
     comment: '',
     type: 'general' as 'baking' | 'crafts' | 'general'
@@ -87,11 +93,12 @@ export function Reviews() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (newReview.name && newReview.comment && newReview.rating > 0) {
+    if (newReview.firstName && newReview.lastName && newReview.comment && newReview.rating > 0) {
       try {
         // Add to Firebase
         await addDoc(collection(db, 'reviews'), {
-          name: newReview.name,
+          firstName: newReview.firstName,
+          lastName: newReview.lastName,
           rating: newReview.rating,
           comment: newReview.comment,
           type: newReview.type,
@@ -100,7 +107,7 @@ export function Reviews() {
         })
         
         // Reset form
-        setNewReview({ name: '', rating: 0, comment: '', type: 'general' })
+        setNewReview({ firstName: '', lastName: '', rating: 0, comment: '', type: 'general' })
         setShowForm(false)
       } catch (error) {
         console.error('Error adding review:', error)
@@ -166,31 +173,44 @@ export function Reviews() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-forest-700 mb-2">
-                    Your Name
+                    First Name
                   </label>
                   <input
                     type="text"
-                    value={newReview.name}
-                    onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
+                    value={newReview.firstName}
+                    onChange={(e) => setNewReview({ ...newReview, firstName: e.target.value })}
                     className="w-full px-4 py-3 border border-forest-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent"
-                    placeholder="Enter your name"
+                    placeholder="Enter your first name"
                     required
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-forest-700 mb-2">
-                    Service Type
+                    Last Name
                   </label>
-                  <select
-                    value={newReview.type}
-                    onChange={(e) => setNewReview({ ...newReview, type: e.target.value as 'baking' | 'crafts' | 'general' })}
+                  <input
+                    type="text"
+                    value={newReview.lastName}
+                    onChange={(e) => setNewReview({ ...newReview, lastName: e.target.value })}
                     className="w-full px-4 py-3 border border-forest-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent"
-                  >
-                    <option value="general">General</option>
-                    <option value="baking">Baking</option>
-                    <option value="crafts">Crafts</option>
-                  </select>
+                    placeholder="Enter your last name"
+                    required
+                  />
                 </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-forest-700 mb-2">
+                  Service Type
+                </label>
+                <select
+                  value={newReview.type}
+                  onChange={(e) => setNewReview({ ...newReview, type: e.target.value as 'baking' | 'crafts' | 'general' })}
+                  className="w-full px-4 py-3 border border-forest-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+                >
+                  <option value="general">General</option>
+                  <option value="baking">Baking</option>
+                  <option value="crafts">Crafts</option>
+                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-forest-700 mb-2">
@@ -261,20 +281,20 @@ export function Reviews() {
             {reviews.map((review) => (
             <div key={review.id} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div className="flex items-center space-x-4 mb-2 md:mb-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-forest-600 to-purple-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {review.name.charAt(0)}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-forest-700">{review.name}</h3>
-                    <div className="flex items-center space-x-2">
-                      {renderStars(review.rating)}
-                      <span className="text-sm text-forest-500">{review.date}</span>
+                  <div className="flex items-center space-x-4 mb-2 md:mb-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-forest-600 to-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">
+                        {review.firstName.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-forest-700">{review.firstName} {review.lastName.charAt(0)}.</h3>
+                      <div className="flex items-center space-x-2">
+                        {renderStars(review.rating)}
+                        <span className="text-sm text-forest-500">{review.date}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${getTypeColor(review.type)}`}>
                   {review.type.charAt(0).toUpperCase() + review.type.slice(1)}
                 </span>
