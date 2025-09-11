@@ -202,15 +202,22 @@ export function Reviews() {
                 <label className="block text-sm font-medium text-forest-700 mb-2">
                   Service Type
                 </label>
-                <select
-                  value={newReview.type}
-                  onChange={(e) => setNewReview({ ...newReview, type: e.target.value as 'baking' | 'crafts' | 'general' })}
-                  className="w-full px-4 py-3 border border-forest-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent"
-                >
-                  <option value="general">General</option>
-                  <option value="baking">Baking</option>
-                  <option value="crafts">Crafts</option>
-                </select>
+                <div className="relative">
+                  <select
+                    value={newReview.type}
+                    onChange={(e) => setNewReview({ ...newReview, type: e.target.value as 'baking' | 'crafts' | 'general' })}
+                    className="w-full px-4 py-3 pr-12 border border-forest-200 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent appearance-none bg-white cursor-pointer"
+                  >
+                    <option value="general">General</option>
+                    <option value="baking">Baking</option>
+                    <option value="crafts">Crafts</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                    <svg className="w-5 h-5 text-forest-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-forest-700 mb-2">
