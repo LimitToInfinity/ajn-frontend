@@ -77,8 +77,6 @@ export function Crafts() {
     '/images/crafts/IMG_2337.jpg',
     '/images/crafts/IMG_2339.jpg',
     '/images/crafts/signal-2025-08-16-16-29-48-535.jpg',
-    '/images/crafts/signal-2025-03-19-064446-1.jpeg',
-    '/images/crafts/signal-2025-03-19-064446.jpeg',
     '/images/crafts/signal-2025-05-31-203241.jpeg',
   ]
 
