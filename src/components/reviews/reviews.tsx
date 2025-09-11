@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 interface Review {
-  id: number
+  id: string
   name: string
   rating: number
   comment: string
@@ -10,9 +12,10 @@ interface Review {
 }
 
 export function Reviews() {
-  const [reviews, setReviews] = useState<Review[]>([
+  // Fake reviews as fallback
+  const fakeReviews: Review[] = [
     {
-      id: 1,
+      id: "fake-1",
       name: "Sarah M.",
       rating: 5,
       comment: "Allyson's crochet top is absolutely beautiful! The quality is amazing and it fits perfectly. I get compliments every time I wear it.",
@@ -20,7 +23,7 @@ export function Reviews() {
       type: "crafts"
     },
     {
-      id: 2,
+      id: "fake-2",
       name: "Michael R.",
       rating: 5,
       comment: "The custom birthday cake for my daughter was incredible! Not only did it look amazing, but it tasted even better. Highly recommend!",
@@ -28,7 +31,7 @@ export function Reviews() {
       type: "baking"
     },
     {
-      id: 3,
+      id: "fake-3",
       name: "Emma L.",
       rating: 5,
       comment: "I ordered a set of crochet toys for my niece and they are so adorable! The attention to detail is remarkable. Will definitely order again.",
@@ -36,14 +39,17 @@ export function Reviews() {
       type: "crafts"
     },
     {
-      id: 4,
+      id: "fake-4",
       name: "David K.",
       rating: 5,
       comment: "Allyson's baking skills are top-notch. The pastries were fresh, delicious, and beautifully presented. Perfect for our office party!",
       date: "2024-12-05",
       type: "baking"
     }
-  ])
+  ]
+
+  const [reviews, setReviews] = useState<Review[]>(fakeReviews)
+  const [isLoading, setIsLoading] = useState(true)
 
   const [newReview, setNewReview] = useState({
     name: '',
@@ -55,20 +61,51 @@ export function Reviews() {
   const [hoverRating, setHoverRating] = useState(0)
   const [showForm, setShowForm] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Firebase real-time listener
+  useEffect(() => {
+    const q = query(collection(db, 'reviews'), orderBy('date', 'desc'))
+    
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const firebaseReviews = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as Review[]
+      
+      // Combine Firebase reviews with fake reviews (fake reviews first)
+      const combinedReviews = [...fakeReviews, ...firebaseReviews]
+      setReviews(combinedReviews)
+      setIsLoading(false)
+    }, (error) => {
+      console.error('Error fetching reviews:', error)
+      // Fallback to fake reviews if Firebase fails
+      setReviews(fakeReviews)
+      setIsLoading(false)
+    })
+
+    return () => unsubscribe()
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (newReview.name && newReview.comment) {
-      const review: Review = {
-        id: reviews.length + 1,
-        name: newReview.name,
-        rating: newReview.rating,
-        comment: newReview.comment,
-        date: new Date().toISOString().split('T')[0],
-        type: newReview.type
+    if (newReview.name && newReview.comment && newReview.rating > 0) {
+      try {
+        // Add to Firebase
+        await addDoc(collection(db, 'reviews'), {
+          name: newReview.name,
+          rating: newReview.rating,
+          comment: newReview.comment,
+          type: newReview.type,
+          date: new Date().toISOString().split('T')[0],
+          createdAt: serverTimestamp()
+        })
+        
+        // Reset form
+        setNewReview({ name: '', rating: 0, comment: '', type: 'general' })
+        setShowForm(false)
+      } catch (error) {
+        console.error('Error adding review:', error)
+        alert('Failed to submit review. Please try again.')
       }
-      setReviews([review, ...reviews])
-      setNewReview({ name: '', rating: 0, comment: '', type: 'general' })
-      setShowForm(false)
     }
   }
 
@@ -214,8 +251,14 @@ export function Reviews() {
         )}
 
         {/* Reviews List */}
-        <div className="space-y-6">
-          {reviews.map((review) => (
+        {isLoading ? (
+          <div className="text-center py-16">
+            <div className="w-12 h-12 border-4 border-forest-200 border-t-forest-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-forest-600">Loading reviews...</p>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {reviews.map((review) => (
             <div key={review.id} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div className="flex items-center space-x-4 mb-2 md:mb-0">
@@ -239,7 +282,8 @@ export function Reviews() {
               <p className="text-forest-600 leading-relaxed">{review.comment}</p>
             </div>
           ))}
-        </div>
+          </div>
+        )}
 
         {/* Empty State */}
         {reviews.length === 0 && (
