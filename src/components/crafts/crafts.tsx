@@ -15,6 +15,7 @@ export function Crafts() {
     setModalAlt('')
   }
   const crochetImages = [
+    '/images/crafts/crochet/signal-2025-09-23-13-59-30-902.jpg',
     '/images/crafts/crochet/signal-2025-03-09-140502.jpeg',
     '/images/crafts/crochet/IMG_2636.jpg',
     '/images/crafts/crochet/IMG_2639.jpg',
